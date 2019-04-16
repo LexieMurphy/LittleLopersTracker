@@ -24,7 +24,7 @@ class LoginButton extends Component {
     this.checkAuthentication();
   }
 
-  async checkAuthentication() {
+  checkAuthentication = async () => {
     const authenticated = await this.props.auth.isAuthenticated();
     if (authenticated !== this.state.authenticated) {
       const user = await this.props.auth.getUser();
