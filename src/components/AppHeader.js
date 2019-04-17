@@ -18,7 +18,7 @@ import {
   <AppBar position="static">
     <Toolbar>
       <Typography variant="title" color="inherit">
-        My React App
+        Little Lopers Tracker
       </Typography>
       <div className={classes.flex} />
       <LoginButton />
