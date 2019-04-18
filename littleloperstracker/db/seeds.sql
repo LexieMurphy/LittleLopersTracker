@@ -1,0 +1,2 @@
+INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy)
+VALUES ('Cheeseburger', true);
