@@ -9,8 +9,12 @@
     "@okta/okta-react": "1.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-jss": "^8.6.1",
     "react-router-dom": "4.3.1",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-sidebar": "^3.0.2",
+    "react-sticky": "^6.0.3",
+    "reactstrap": "^8.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

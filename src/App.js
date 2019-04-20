@@ -8,6 +8,8 @@ import {
 
 import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
+import Sidebar from './components/SideBar';
+import Jumbotron from './components/Jumbotron';
 
 const styles = theme => ({
   main: {
@@ -16,6 +18,7 @@ const styles = theme => ({
       padding: 2 * theme.spacing.unit,
     },
   },
+  
 });
 
 const App = ({ classes }) => (
@@ -26,7 +29,13 @@ const App = ({ classes }) => (
     <Route exact path="/" component={Home} />
     <Route path="/implicit/callback" component={ImplicitCallback} />
     </main>
+          <Jumbotron>
+
+          </Jumbotron>
   </Fragment>
+  
+
+ 
 );
 
 export default withStyles(styles)(App);
