@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Route } from 'react-router-dom';
-import { SecureRoute, ImplicitCallback } from '@okta/okta-react';
+import { ImplicitCallback } from '@okta/okta-react';
 import {
   CssBaseline,
   withStyles,
@@ -8,7 +8,7 @@ import {
 
 import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
-import Sidebar from './components/SideBar';
+// import Sidebar from './components/SideBar';
 import Jumbotron from './components/Jumbotron';
 
 const styles = theme => ({
@@ -27,7 +27,7 @@ const App = ({ classes }) => (
     <AppHeader />
     <main className={classes.main}>
     <Route exact path="/" component={Home} />
-    <SecureRoute exat path="/posts" component={PostsManager} />
+    {/* <SecureRoute exat path="/posts" component={PostsManager} /> */}
     <Route path="/implicit/callback" component={ImplicitCallback} />
     </main>
           <Jumbotron>

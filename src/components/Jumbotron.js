@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button } from 'reactstrap';
+import { Jumbotron } from 'reactstrap'; //removed Button
 import './Jumbotron.css'
 
 const App= (props) => {
