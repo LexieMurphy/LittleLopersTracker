@@ -28,7 +28,11 @@
     "recompose": "^0.27.1",
     "sequelize": "^5.6.1",
     "shell-quote": "^1.6.1",
-    "sqlite3": "^4.0.6"
+    "sqlite3": "^4.0.6",
+    "react-jss": "^8.6.1",
+    "react-sidebar": "^3.0.2",
+    "react-sticky": "^6.0.3",
+    "reactstrap": "^8.0.0"
   },
   "scripts": {
     "start": "npm-run-all --parallel watch:server start:web",

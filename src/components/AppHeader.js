@@ -7,6 +7,8 @@ import {
   Typography,
   withStyles,
 } from '@material-ui/core';
+import Sidebar from "react-sidebar";
+
 
   import LoginButton from './LoginButton';
 
@@ -16,18 +18,53 @@ import {
     },
   };
 
-  const AppHeader = ({classes}) => (
-  <AppBar position="static">
-    <Toolbar>
-      <Typography variant="title" color="inherit">
-        Little Lopers Tracker
-      </Typography>
-      <Button color="inherit" component={Link} to="/">Home</Button>
-      {/* We aren't using this yet. <Button color="inherit" component={Link} to="/posts">My Stash</Button> */}
-      <div className={classes.flex} />
-      <LoginButton />
-    </Toolbar>
-  </AppBar>
-);
+  class AppHeader extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        sidebarOpen: false
+      };
+      this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+    }
+
+    onSetSidebarOpen(open) {
+      this.setState({ sidebarOpen: open });
+    }
+
+    render() {
+      const sideBarContent = (
+        <div>
+          <button className="theme-button" onClick={() => this.onSetSidebarOpen(false)}>
+            Close sidebar
+          </button>
+        </div>
+  
+      )
+
+      return (
+      <AppBar position="static">
+            <Sidebar 
+        sidebar={sideBarContent}
+        open={this.state.sidebarOpen}
+        onSetOpen={this.onSetSidebarOpen}
+        styles={{ sidebar: { background: "#e699d5" } }}
+      />
+      <Toolbar>
+      <button className="open-sidebar-button" onClick={() => this.onSetSidebarOpen(true)}>
+            
+          </button>
+        <Typography variant="title" color="inherit">
+          Little Lopers Tracker
+        </Typography>
+        <div />
+        <LoginButton />
+      </Toolbar>
+    </AppBar>
+  );
+    }
+  }
+
+
+
 
 export default withStyles(styles)(AppHeader);

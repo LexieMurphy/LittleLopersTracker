@@ -8,7 +8,8 @@ import {
 
 import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
-import PostsManager from './pages/PostsManager';
+import Sidebar from './components/SideBar';
+import Jumbotron from './components/Jumbotron';
 
 const styles = theme => ({
   main: {
@@ -17,6 +18,7 @@ const styles = theme => ({
       padding: 2 * theme.spacing.unit,
     },
   },
+  
 });
 
 const App = ({ classes }) => (
@@ -28,7 +30,13 @@ const App = ({ classes }) => (
     <SecureRoute exat path="/posts" component={PostsManager} />
     <Route path="/implicit/callback" component={ImplicitCallback} />
     </main>
+          <Jumbotron>
+
+          </Jumbotron>
   </Fragment>
+  
+
+ 
 );
 
 export default withStyles(styles)(App);
