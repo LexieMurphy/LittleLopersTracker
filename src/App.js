@@ -5,11 +5,16 @@ import {
   CssBaseline,
   withStyles,
 } from '@material-ui/core';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
 
 import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
 // import Sidebar from './components/SideBar';
 import Jumbotron from './components/Jumbotron';
+
+
 
 const styles = theme => ({
   main: {
@@ -20,6 +25,8 @@ const styles = theme => ({
   },
   
 });
+
+
 
 const App = ({ classes }) => (
   <Fragment>
@@ -33,10 +40,11 @@ const App = ({ classes }) => (
           <Jumbotron>
 
           </Jumbotron>
+         
   </Fragment>
   
 
  
 );
-
+library.add(faStroopwafel)
 export default withStyles(styles)(App);

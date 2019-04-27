@@ -1,10 +1,22 @@
 import React from "react";
+import {
+ 
+  withStyles,
+} from '@material-ui/core';
 
 import Sidebar from "react-sidebar";
 import './Sidebar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
+const styles = placement => ({
+  button: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
 
+  }
+})
   
  
 class App extends React.Component {
@@ -23,9 +35,11 @@ class App extends React.Component {
   render() {
     const sideBarContent = (
       <div>
-        <button class ="theme-button" onClick={() => this.onSetSidebarOpen(false)}>
-          Close sidebar
-        </button>
+         <i className="fas fa-angle-double-right"  onClick={() => this.onSetSidebarOpen(false)}/>
+        {/* <button class ="theme-button"  onClick={() => this.onSetSidebarOpen(false)}> */}
+          {/* Close sidebar
+        </button> */}
+        
       </div>
 
     )
@@ -41,4 +55,4 @@ class App extends React.Component {
   }
 }
  
-export default App;
+export default withStyles(styles)(App);

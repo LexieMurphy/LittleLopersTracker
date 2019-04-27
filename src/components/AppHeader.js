@@ -32,9 +32,9 @@ import Sidebar from "react-sidebar";
     render() {
       const sideBarContent = (
         <div>
-          <button className="theme-button" onClick={() => this.onSetSidebarOpen(false)}>
-            Close sidebar
-          </button>
+          <i className="fas fa-angle-double-left" onClick={() => this.onSetSidebarOpen(false)}>
+            
+          </i>
         </div>
   
       )
@@ -48,10 +48,10 @@ import Sidebar from "react-sidebar";
         styles={{ sidebar: { background: "#e699d5" } }}
       />
       <Toolbar>
-      <button className="open-sidebar-button" onClick={() => this.onSetSidebarOpen(true)}>
-            
+      <button className="fas fa-angle-double-right" onClick={() => this.onSetSidebarOpen(true)}>
+          
           </button>
-        <Typography variant="title" color="inherit">
+        <Typography className="header" variant="title" color="inherit">
           Little Lopers Tracker
         </Typography>
         <div />
