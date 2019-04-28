@@ -75,7 +75,7 @@ module.exports = function(sequelize, DataTypes) {
         styleSize_MiniWrapMommy: {
             type: DataTypes.BOOLEAN,
             allowNull: true
-        }
+        },
     });
     return loperItems;
 };
