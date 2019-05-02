@@ -5,7 +5,7 @@ import {
   Typography,
   withStyles,
 } from '@material-ui/core';
-import Sidebar from "react-sidebar";
+import Sidebar from "./SideBar";
 
 
   import LoginButton from './LoginButton';
@@ -30,7 +30,7 @@ import Sidebar from "react-sidebar";
     }
 
     render() {
-      const sideBarContent = (
+         const sideBarContent = (
         <div>
           <i className="fas fa-angle-double-left" onClick={() => this.onSetSidebarOpen(false)}>
             
@@ -59,8 +59,9 @@ import Sidebar from "react-sidebar";
       </Toolbar>
     </AppBar>
   );
-    }
-  }
+     };
+  }; 
+
 
 
 
