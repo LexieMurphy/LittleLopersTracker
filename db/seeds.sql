@@ -1,8 +1,8 @@
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy)
-VALUES ("Apple", "N/A", "Apple.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+VALUES ("Apple", "N/A", "Apple.png", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy)
-VALUES ("Aqua", "Unknown", "Aqua.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+VALUES ("Aqua", "Unknown", "Aqua.png", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy)
 VALUES ("Army", "Fall 2018", "Army.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
