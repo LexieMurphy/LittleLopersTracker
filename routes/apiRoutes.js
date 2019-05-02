@@ -1,10 +1,21 @@
 var db = require("../models");
 
-module.exports = function(app) {
-    app.get("/api/loperItems", function (req, res) {
-        db.loperItems.findAll({})
-            .then(function (dbloperItems) {
-                res.json(dbloperItems);
+var Sequelize = require('sequelize');
+
+var path = require("path");
+
+module.exports = function (app) {
+    // localhost:3001/api/loperItems/true
+    app.get("/api/loperItems/:myStash", function (req, res) {
+        var whereCondition = {
+            where: {
+                myStash: req.params.myStash
+            }
+        };
+
+        db.loperItems.findAll(whereCondition)
+            .then(function (db) {
+                res.json(db);
             });
     });
 };
