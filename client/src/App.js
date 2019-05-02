@@ -13,6 +13,7 @@ import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
 // import Sidebar from './components/SideBar';
 import Jumbotron from './components/Jumbotron';
+import ItemModalWrapped from './components/Modal';
 
 
 
@@ -40,7 +41,10 @@ const App = ({ classes }) => (
           <Jumbotron>
 
           </Jumbotron>
-         
+          <ItemModalWrapped>
+            
+          </ItemModalWrapped>
+
   </Fragment>
   
 
