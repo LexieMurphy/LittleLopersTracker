@@ -91,7 +91,7 @@ class Items extends Component {
               <List>
                 {this.state.Items.map(item => (
                   <ListItem key={item._id}>
-                    <Link to={"/Items/" + item._id}>
+                    <Link to={"/items/" + item._id}>
                       <strong>
                         {item.title} by {item.author}
                       </strong>

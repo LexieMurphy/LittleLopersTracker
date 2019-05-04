@@ -3,6 +3,11 @@ import {
   Typography,
 } from '@material-ui/core';
 
-export default () => (
-  <Typography variant="display1" position="">Welcome Little Lopers!</Typography>
-);
+export default (props) => {
+  console.log(props.itemsIDoHave)
+
+  return (
+    <Typography variant="display1" position="">Welcome Little Lopers!</Typography>
+    
+  )
+};

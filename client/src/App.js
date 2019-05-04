@@ -1,20 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import { ImplicitCallback } from '@okta/okta-react';
-import {
-  CssBaseline,
-  withStyles,
-} from '@material-ui/core';
+import { CssBaseline, withStyles } from '@material-ui/core';
 import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
 // import Sidebar from './components/SideBar';
+import AppHeader from './components/AppHeader';
 import Jumbotron from './components/Jumbotron';
 import ItemModalWrapped from './components/Modal';
 
+import API from './utils/API'
 
 
 const styles = theme => ({
@@ -27,28 +25,55 @@ const styles = theme => ({
   
 });
 
+class App extends Component {
 
+  state = {
+    itemsIDoNotHave: [],
+    itemsIDoHave: []
+  }
 
-const App = ({ classes }) => (
-  <Fragment>
-    <CssBaseline />
-    <AppHeader />
-    <main className={classes.main}>
-    <Route exact path="/" component={Home} />
-    {/* <SecureRoute exat path="/posts" component={PostsManager} /> */}
-    <Route path="/implicit/callback" component={ImplicitCallback} />
-    </main>
-          <Jumbotron>
+  componentDidMount () {
+    API.getItemsIDoNotHave()
+      .then((response) => {
+        if (response.status === 200) {
+          this.setState({ itemsIDoNotHave: response.data });
+        }
+      })
+  }
 
-          </Jumbotron>
-          <ItemModalWrapped>
-            
-          </ItemModalWrapped>
+  onItemSelect = (itemId) => {
+    console.log(itemId);
+    
+    const itemsIDoHave = { ...this.state.itemsIDoHave }
+    // get the item from this.state.itemsIDoNotHave
+    // push it into itemsIDoHave
+    // call this.setState({itemsIDoHave})
+  }
 
-  </Fragment>
-  
+  render () {
+    const { classes } = this.props;
+    const { itemsIDoNotHave } = this.state;    
 
- 
-);
-library.add(faStroopwafel)
+    return (
+      <Fragment>
+        <CssBaseline />
+        <AppHeader itemsIDoNotHave={itemsIDoNotHave} onItemSelect={this.onItemSelect} />
+
+        <main className={classes.main}>
+          <Route exact path="/" render={(props) => {
+              return <Home {...props} itemsIDoHave={this.state.itemsIDoHave} />
+            }}
+          />
+          {/* <SecureRoute exat path="/posts" component={PostsManager} /> */}
+          <Route path="/implicit/callback" component={ImplicitCallback} />
+        </main>
+
+        <Jumbotron></Jumbotron>
+        <ItemModalWrapped></ItemModalWrapped>
+      </Fragment>
+    )
+  }
+}
+
+library.add(faStroopwafel);
 export default withStyles(styles)(App);
