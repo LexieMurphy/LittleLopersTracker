@@ -1,19 +1,19 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import { ImplicitCallback } from '@okta/okta-react';
-import {
-  CssBaseline,
-  withStyles,
-} from '@material-ui/core';
+import { CssBaseline, withStyles } from '@material-ui/core';
 import { library } from '@fortawesome/fontawesome-svg-core'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
 // import Sidebar from './components/SideBar';
+import AppHeader from './components/AppHeader';
 import Jumbotron from './components/Jumbotron';
 import ItemModalWrapped from './components/Modal';
+
+import API from './utils/API'
+
 
 const styles = theme => ({
   main: {
@@ -26,8 +26,26 @@ const styles = theme => ({
 });
 
 class App extends Component {
+
+  state = {
+    itemsIDoNotHave: []
+  }
+
+  componentDidMount () {
+    API.getItemsIDoNotHave()
+      .then((response) => {
+        if (response.status === 200) {
+          this.setState({ itemsIDoNotHave: response.data });
+        }
+      })
+  }
+
   render () {
     const { classes } = this.props;
+    const { itemsIDoNotHave } = this.state;
+
+    console.log(itemsIDoNotHave);
+    
 
     return (
       <Fragment>

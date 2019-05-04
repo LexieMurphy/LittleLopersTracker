@@ -39,12 +39,13 @@ class AppHeader extends React.Component {
           open={this.state.sidebarOpen}
           onSetOpen={this.onSetSidebarOpen}
           styles={{ sidebar: { background: "#e699d5" } }}
-        />
+        >
+          {/* react-sidebar required a child, or it throw and error */}
+          <span />
+        </Sidebar>
 
         <Toolbar>
-          <button className="fas fa-angle-double-right" onClick={() => this.onSetSidebarOpen(true)}>
-            
-            </button>
+          <button className="fas fa-angle-double-right" onClick={() => this.onSetSidebarOpen(true)} />
           <Typography className="header" variant="title" color="inherit">
             Little Lopers Tracker
           </Typography>
