@@ -5,6 +5,9 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
+
+var db = require("./models");
+
 // const epilogue = require('epilogue');
 // const OktaJwtVerifier = require('@okta/jwt-verifier');
 
@@ -29,11 +32,6 @@ app.use(bodyParser.json());
 //   }
 // });
 
-const database = new Sequelize({
-  dialect: 'sqlite',
-  storage: './test.sqlite',
-});
-
 // const Post = database.define('posts', {
 //   title: Sequelize.STRING,
 //   body: Sequelize.TEXT,
@@ -50,7 +48,7 @@ apiRoutes(app);
 
 const port = process.env.SERVER_PORT || 3001;
 
-database.sync().then(() => {
+db.sequelize.sync().then(() => {
   app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
