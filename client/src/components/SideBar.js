@@ -36,10 +36,11 @@ class App extends React.Component {
     const sideBarContent = (
       <div>
          <i className="fas fa-angle-double-right"  onClick={() => this.onSetSidebarOpen(false)}/>
-        {/* <button class ="theme-button"  onClick={() => this.onSetSidebarOpen(false)}> */}
-          {/* Close sidebar
-        </button> */}
-        
+         <div id="results">
+              <table id="itemsIDoNotHave">
+                <tr><th>bowName</th><th>image</th></tr>
+              </table>
+            </div>  
       </div>
 
     )

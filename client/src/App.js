@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import { ImplicitCallback } from '@okta/okta-react';
 import {
@@ -15,8 +15,6 @@ import Home from './pages/Home';
 import Jumbotron from './components/Jumbotron';
 import ItemModalWrapped from './components/Modal';
 
-
-
 const styles = theme => ({
   main: {
     padding: 3 * theme.spacing.unit,
@@ -27,28 +25,27 @@ const styles = theme => ({
   
 });
 
+class App extends Component {
+  render () {
+    const { classes } = this.props;
 
+    return (
+      <Fragment>
+        <CssBaseline />
+        <AppHeader />
 
-const App = ({ classes }) => (
-  <Fragment>
-    <CssBaseline />
-    <AppHeader />
-    <main className={classes.main}>
-    <Route exact path="/" component={Home} />
-    {/* <SecureRoute exat path="/posts" component={PostsManager} /> */}
-    <Route path="/implicit/callback" component={ImplicitCallback} />
-    </main>
-          <Jumbotron>
+        <main className={classes.main}>
+          <Route exact path="/" component={Home} />
+          {/* <SecureRoute exat path="/posts" component={PostsManager} /> */}
+          <Route path="/implicit/callback" component={ImplicitCallback} />
+        </main>
 
-          </Jumbotron>
-          <ItemModalWrapped>
-            
-          </ItemModalWrapped>
+        <Jumbotron></Jumbotron>
+        <ItemModalWrapped></ItemModalWrapped>
+      </Fragment>
+    )
+  }
+}
 
-  </Fragment>
-  
-
- 
-);
-library.add(faStroopwafel)
+library.add(faStroopwafel);
 export default withStyles(styles)(App);
