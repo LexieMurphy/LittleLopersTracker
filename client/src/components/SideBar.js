@@ -6,7 +6,7 @@ import {
 
 import Sidebar from "react-sidebar";
 import './Sidebar.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const styles = placement => ({
