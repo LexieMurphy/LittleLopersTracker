@@ -5,7 +5,7 @@ import {
   Typography,
   withStyles,
 } from '@material-ui/core';
-import Sidebar from "react-sidebar";
+import AppSidebar from "./AppSidebar";
 import LoginButton from './LoginButton';
 
 const styles ={
@@ -24,25 +24,16 @@ class AppHeader extends React.Component {
   }
 
   render() {
-    const sideBarContent = (
-      <div>
-        <i className="fas fa-angle-double-left" onClick={() => this.onSetSidebarOpen(false)}>
-        </i>
-      </div>
-
-    )
+    const { itemsIDoNotHave } = this.props;
 
     return (
       <AppBar position="static">
-        <Sidebar 
-          sidebar={sideBarContent}
-          open={this.state.sidebarOpen}
-          onSetOpen={this.onSetSidebarOpen}
-          styles={{ sidebar: { background: "#e699d5" } }}
-        >
-          {/* react-sidebar required a child, or it throw and error */}
-          <span />
-        </Sidebar>
+        <AppSidebar 
+          sidebarOpen={this.state.sidebarOpen} 
+          onSetSidebarOpen={this.onSetSidebarOpen} 
+          itemsIDoNotHave={itemsIDoNotHave}
+          onItemSelect={this.props.onItemSelect}
+        />
 
         <Toolbar>
           <button className="fas fa-angle-double-right" onClick={() => this.onSetSidebarOpen(true)} />
