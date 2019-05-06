@@ -69,7 +69,7 @@ class App extends Component {
         </main>
 
         <Jumbotron></Jumbotron>
-        <ItemModalWrapped></ItemModalWrapped>
+        {/* <ItemModalWrapped></ItemModalWrapped> */}
       </Fragment>
     )
   }
