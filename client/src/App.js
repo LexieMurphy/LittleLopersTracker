@@ -44,7 +44,7 @@ class App extends Component {
   onItemSelect = (itemId) => {
     console.log(itemId);
     
-    const itemsIDoHave = { ...this.state.itemsIDoHave }
+    //const itemsIDoHave = { ...this.state.itemsIDoHave }
     // get the item from this.state.itemsIDoNotHave
     // push it into itemsIDoHave
     // call this.setState({itemsIDoHave})

@@ -9,28 +9,30 @@ const Sequelize = require('sequelize');
 var db = require("./models");
 
 // const epilogue = require('epilogue');
-// const OktaJwtVerifier = require('@okta/jwt-verifier');
+const OktaJwtVerifier = require('@okta/jwt-verifier');
 
-// const oktaJwtVerifier = new OktaJwtVerifier({
-//   clientId: process.env.REACT_APP_OKTA_CLIENT_ID,
-//   issuer: `${process.env.REACT_APP_OKTA_ORG_URL}/oauth2/default`,
-// });
-
+const oktaJwtVerifier = new OktaJwtVerifier({
+  clientId: process.env.REACT_APP_OKTA_CLIENT_ID,
+  issuer: `${process.env.REACT_APP_OKTA_ORG_URL}/oauth2/default`,
+});
+console.log(OktaJwtVerifier.clientId)
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// app.use(async (req, res, next) => {
-//   try {
-//     if (!req.headers.authorization) throw new Error('Authorization header is required');
+app.use(async (req, res, next) => {
+  console.log(req.headers);
+  try {
+    if (!req.headers.authorization) throw new Error('Authorization header is required');
 
-//     const accessToken = req.headers.authorization.trim().split(' ')[1];
-//     await oktaJwtVerifier.verifyAccessToken(accessToken);
-//     next();
-//   } catch (error) {
-//     next(error.message);
-//   }
-// });
+    const accessToken = req.headers.authorization.trim().split(' ')[1];
+    await oktaJwtVerifier.verifyAccessToken(accessToken);
+    console.log('hello' + accessToken);
+    next();
+  } catch (error) {
+    next(error.message);
+  }
+});
 
 // const Post = database.define('posts', {
 //   title: Sequelize.STRING,
