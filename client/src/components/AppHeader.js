@@ -4,17 +4,20 @@ import {
   Toolbar,
   Typography,
   withStyles,
+  Button,
 } from '@material-ui/core';
 import AppSidebar from "./AppSidebar";
 import LoginButton from './LoginButton';
+import Box from '@material-ui/core/Box';
+import Icon from '@material-ui/core/Icon';
 
-const styles ={
-  flex: {
-    flex: 1
-  },
+
+
+const styles = {
+
 };
 
-class AppHeader extends React.Component {  
+class AppHeader extends React.Component {
   state = {
     sidebarOpen: false
   };
@@ -27,23 +30,32 @@ class AppHeader extends React.Component {
     const { itemsIDoNotHave } = this.props;
 
     return (
-      <AppBar position="static">
-        <AppSidebar 
-          sidebarOpen={this.state.sidebarOpen} 
-          onSetSidebarOpen={this.onSetSidebarOpen} 
-          itemsIDoNotHave={itemsIDoNotHave}
-          onItemSelect={this.props.onItemSelect}
-        />
-
-        <Toolbar>
-          <button className="fas fa-angle-double-right" onClick={() => this.onSetSidebarOpen(true)} />
-          <Typography className="header" variant="title" color="inherit">
-            Little Lopers Tracker
-          </Typography>
-          <div />
-          <LoginButton />
-        </Toolbar>
-      </AppBar>
+      <div style={{ width: '100%' }}>
+        <AppBar position="static" style={{ paddingBottom: 0, marginBottom: 0}}>
+          <AppSidebar
+            sidebarOpen={this.state.sidebarOpen}
+            onSetSidebarOpen={this.onSetSidebarOpen}
+            itemsIDoNotHave={itemsIDoNotHave}
+            onItemSelect={this.props.onItemSelect}
+          />
+          <Box component="span" p={1}>
+            <Toolbar>
+              <Box p={1} flexGrow={1}>
+                
+                <Button color="inherit" onClick={() => this.onSetSidebarOpen(true)}><Icon>add_icon</Icon>View the Full Collection!</Button>
+              </Box>
+              <Box flexGrow={1.40} p={0}>
+                <Typography className="header" variant="title" color="inherit">
+                  Little Lopers Tracker
+                </Typography>
+              </Box>
+              <Box p={2}>
+                <LoginButton />
+              </Box>
+            </Toolbar>
+          </Box>
+        </AppBar>
+      </div>
     );
   }
 }
