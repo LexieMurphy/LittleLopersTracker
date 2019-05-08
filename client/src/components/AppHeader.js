@@ -8,13 +8,13 @@ import {
 import AppSidebar from "./AppSidebar";
 import LoginButton from './LoginButton';
 
-const styles ={
+const styles = {
   flex: {
     flex: 1
   },
 };
 
-class AppHeader extends React.Component {  
+class AppHeader extends React.Component {
   state = {
     sidebarOpen: false
   };
@@ -28,9 +28,9 @@ class AppHeader extends React.Component {
 
     return (
       <AppBar position="static">
-        <AppSidebar 
-          sidebarOpen={this.state.sidebarOpen} 
-          onSetSidebarOpen={this.onSetSidebarOpen} 
+        <AppSidebar
+          sidebarOpen={this.state.sidebarOpen}
+          onSetSidebarOpen={this.onSetSidebarOpen}
           itemsIDoNotHave={itemsIDoNotHave}
           onItemSelect={this.props.onItemSelect}
         />
@@ -47,8 +47,6 @@ class AppHeader extends React.Component {
     );
   }
 }
-
-
 
 
 export default withStyles(styles)(AppHeader);

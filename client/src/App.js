@@ -10,6 +10,7 @@ import Home from './pages/Home';
 // import Sidebar from './components/SideBar';
 import AppHeader from './components/AppHeader';
 import Jumbotron from './components/Jumbotron';
+import AppStash from './components/Stash';
 import ItemModalWrapped from './components/Modal';
 
 import API from './utils/API'
@@ -22,7 +23,7 @@ const styles = theme => ({
       padding: 2 * theme.spacing.unit,
     },
   },
-  
+
 });
 
 class App extends Component {
@@ -32,27 +33,42 @@ class App extends Component {
     itemsIDoHave: []
   }
 
-  componentDidMount () {
+  componentDidMount() {
     API.getItemsIDoNotHave()
       .then((response) => {
         if (response.status === 200) {
           this.setState({ itemsIDoNotHave: response.data });
         }
       })
+      API.getItemsIDoHave()
+      .then((response) => {
+        if (response.status === 200) {
+          this.setState({ itemsIDoHave: response.data });
+        }
+      })
   }
 
   onItemSelect = (itemId) => {
     console.log(itemId);
-    
+
     const itemsIDoHave = { ...this.state.itemsIDoHave }
     // get the item from this.state.itemsIDoNotHave
     // push it into itemsIDoHave
     // call this.setState({itemsIDoHave})
+
+    // API.getItemsIDoNotHave()
+    //   .then((response) => {
+    //     if (response.status === 200) {
+    //       this.setState({ itemsIDoHave: response.data });
+    //       console.log(itemsIDoHave);
+    //     }
+    //   })
   }
 
-  render () {
+  render() {
     const { classes } = this.props;
-    const { itemsIDoNotHave } = this.state;    
+    const { itemsIDoNotHave } = this.state;
+    const { itemsIDoHave } = this.state;
 
     return (
       <Fragment>
@@ -61,15 +77,16 @@ class App extends Component {
 
         <main className={classes.main}>
           <Route exact path="/" render={(props) => {
-              return <Home {...props} itemsIDoHave={this.state.itemsIDoHave} />
-            }}
+            return <Home {...props} itemsIDoHave={this.state.itemsIDoHave} />
+          }}
           />
           {/* <SecureRoute exat path="/posts" component={PostsManager} /> */}
           <Route path="/implicit/callback" component={ImplicitCallback} />
         </main>
 
         <Jumbotron></Jumbotron>
-        <ItemModalWrapped></ItemModalWrapped>
+        <AppStash itemsIDoHave={itemsIDoHave}></AppStash>
+        {/* <ItemModalWrapped></ItemModalWrapped> */}
       </Fragment>
     )
   }
