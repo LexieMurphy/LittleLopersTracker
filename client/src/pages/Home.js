@@ -7,7 +7,7 @@ export default (props) => {
   console.log(props.itemsIDoHave)
 
   return (
-    <Typography variant="display1" position="">Welcome Little Lopers!</Typography>
+    <Typography></Typography>
     
   )
 };
