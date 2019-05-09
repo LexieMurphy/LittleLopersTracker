@@ -18,3 +18,7 @@ export default withStyles((props) => {
   console.log(props.itemsIDoHave)
 
   return (
+    <Typography></Typography>
+    
+  )
+});

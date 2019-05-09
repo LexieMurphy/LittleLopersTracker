@@ -47,16 +47,16 @@ INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Pre
 VALUES ("Buffalo Plaid", "Winter 2018", "BuffaloPlaid.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
 
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy, createdAt, updatedAt)
-VALUES ("Burgandy", "Fall 2017", "Burgandy.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
+VALUES ("Burgundy", "Fall 2017", "Burgundy.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
 
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy, createdAt, updatedAt)
-VALUES ("Burgandy Floral", "N/A", "BurgandyFloral.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
+VALUES ("Burgundy Floral", "N/A", "BurgundyFloral.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
 
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy, createdAt, updatedAt)
-VALUES ("Burgandy Floral Velvet Knot", "Unknown", "BurgandyFloralVelvetKnot.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
+VALUES ("Burgundy Floral Velvet Knot", "Unknown", "BurgundyFloralVelvetKnot.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
 
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy, createdAt, updatedAt)
-VALUES ("Burgandy Velvet Knot", "Fall 2017", "BurgandyVelvetKnot.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
+VALUES ("Burgundy Velvet Knot", "Fall 2017", "BurgundyVelvetKnot.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
 
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy, createdAt, updatedAt)
 VALUES ("Camo Knot", "Unknown", "CamoKnot.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
@@ -152,7 +152,7 @@ INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Pre
 VALUES ("Groovy", "Spring 2019", "Groovy.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
 
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy, createdAt, updatedAt)
-VALUES ("Hearts Knot", "Spring 2018", "Hearts Knot.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
+VALUES ("Hearts Knot", "Spring 2018", "HeartsKnot.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());
 
 INSERT INTO loperItems (bowName, releaseDate, image_name, myStash, styleSize_Preemie, styleSize_Newborn, styleSize_Baby, styleSize_ToddlerKid, styleSize_Mommy, styleSize_BBNudeNylon, styleSize_BBBlackNylon, styleSize_BBClip, styleSize_SkinnyNudeNylon, styleSize_SkinnyBlackNylon, styleSize_LittleClip, styleSize_MiniWrapNewborn, styleSize_MiniWrapBaby, styleSize_MiniWrapToddlerKid, styleSize_MiniWrapMommy, createdAt, updatedAt)
 VALUES ("Holly", "Winter 2018", "Holly.png", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NOW(), NOW());

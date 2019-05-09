@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { ImplicitCallback } from '@okta/okta-react';
-import {  withStyles, MuiThemeProvider } from '@material-ui/core';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome
+import { MuiThemeProvider, withStyles } from '@material-ui/core';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import Home from './pages/Home';
 // import Sidebar from './components/SideBar';
 import AppHeader from './components/AppHeader';
 import Jumbotron from './components/Jumbotron';
-import ItemModalWrapped from './components/Modal';
-import API from './utils/API';
+import AppStash from './components/Stash';
+
+
+import API from './utils/API'
+import { get } from 'https';
 import theme from './components/Theme';
 import './components/style.css'
 
@@ -39,6 +43,12 @@ class App extends Component {
           this.setState({ itemsIDoNotHave: response.data });
         }
       })
+      API.getItemsIDoHave()
+      .then((response) => {
+        if (response.status === 200) {
+          this.setState({ itemsIDoHave: response.data });
+        }
+      })
   }
 
   onItemSelect = (itemId) => {
@@ -48,24 +58,47 @@ class App extends Component {
     // get the item from this.state.itemsIDoNotHave
     // push it into itemsIDoHave
     // call this.setState({itemsIDoHave})
+    get(this.state.itemsIDoHave)
+
+
+    // API.getItemsIDoNotHave()
+    //   .then((response) => {
+    //     if (response.status === 200) {
+    //       this.setState({ itemsIDoHave: response.data });
+    //       console.log(itemsIDoHave);
+    //     }
+    //   })
   }
 
   render() {
     const { classes } = this.props;
     const { itemsIDoNotHave } = this.state;
+    const { itemsIDoHave } = this.state;
 
     return (
       <div className="image">
       <MuiThemeProvider theme={theme}>
-          <AppHeader itemsIDoNotHave={itemsIDoNotHave} onItemSelect={this.onItemSelect} />
-          <main className={classes.main}>
-            <Route exact path="/" render={(props) => {
-              return <Home {...props} itemsIDoHave={this.state.itemsIDoHave} />
-            }}
+      <AppHeader itemsIDoNotHave={itemsIDoNotHave} onItemSelect={this.onItemSelect} />
 
+        <main className={classes.main}>
+          <Route exact path="/" render={(props) => {
+            return <Home {...props} itemsIDoHave={this.state.itemsIDoHave} />
+          }}
+          />
+          {/* <SecureRoute exat path="/posts" component={PostsManager} /> */}
+          <Route path="/implicit/callback" component={ImplicitCallback} />
+        </main>
+
+        <Jumbotron></Jumbotron>
+        <AppStash itemsIDoHave={itemsIDoHave}></AppStash>
+        {/* <ItemModalWrapped></ItemModalWrapped> */}
+        </MuiThemeProvider>
+        </div>
     )
   }
 }
+
+        
 
 library.add(faStroopwafel);
 export default withStyles(styles)(App);

@@ -13,6 +13,8 @@ const IMAGE_BASE_URL = '/images/bows/';
 const styles = (placement) => ({
   button: {
     flex: 1,
+    // flexDirection: "column",
+    // justifyContent: "center"
   }
 });
 
@@ -21,6 +23,7 @@ class AppSidebar extends React.Component {
     const sideBarContent = (
       <div>
         <Button onClick={() => this.props.onSetSidebarOpen(false)}><Icon >remove_icon</Icon>Close Collection</Button>
+        {/* <i className="fas fa-angle-double-left" onClick={() => this.props.onSetSidebarOpen(false)} /> */}
         <ul>
           {
             this.props.itemsIDoNotHave.map((itm, idx) => {
@@ -29,8 +32,8 @@ class AppSidebar extends React.Component {
                   <div class="gallery">
                     <ul>
                       <li key={`${itm.bowName}_${itm.id}`} onClick={() => { this.props.onItemSelect(itm.id) }}>
-                          <img src={`${IMAGE_BASE_URL}${itm.image_name}`} alt={itm.bowName} />
-                          <h5 className="text-block">{itm.bowName}</h5>
+                        <img src={`${IMAGE_BASE_URL}${itm.image_name}`} alt={itm.bowName} />
+                        <h5 className="text-block">{itm.bowName}</h5>
                       </li>
                     </ul>
                   </div>

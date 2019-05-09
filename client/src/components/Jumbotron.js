@@ -1,6 +1,6 @@
 import React from 'react';
 import { Jumbotron } from 'reactstrap'; //removed Button
-import './style.css';
+import './style.css'
 
 const App = (props) => {
   return (
