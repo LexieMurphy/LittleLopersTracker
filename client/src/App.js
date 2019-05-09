@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { ImplicitCallback } from '@okta/okta-react';
 import { MuiThemeProvider, withStyles } from '@material-ui/core';
