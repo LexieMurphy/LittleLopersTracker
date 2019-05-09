@@ -18,12 +18,3 @@ export default withStyles((props) => {
   console.log(props.itemsIDoHave)
 
   return (
-    <div>
-    <Typography variant="display1" position="">Welcome Little Lopers!</Typography>
-
-    <Stash> </Stash>
-   </div>
-//
-  )})
-
- 
