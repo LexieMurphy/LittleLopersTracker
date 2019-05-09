@@ -1,0 +1,177 @@
+/* for Jumbotron */
+.header-j{
+    position: absolute;
+ top: 20%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ color: white;
+ text-align: center;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-size: 50px;
+}
+/* for background image over entire app */
+.image{
+ background: 
+ linear-gradient(
+   rgba(148, 104, 156, 0.70),
+   rgba(0, 0, 0, 0.5)
+ ),
+ url(littlelopers.png);
+ background-size: cover;
+ height: 97vh;
+}
+/* for horizontal line in jumbotron */
+ hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: rgb(253, 251, 251);
+    border-width: 3px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-width: 0 0 2px 0;
+    border-radius: 20px;
+}
+
+/* for sidebar thumbnails */
+
+/* html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+} */
+
+/* body {
+  background-color: #f2f2f2;
+}
+
+header {
+  width: 100%;
+  background-color: #77cdb4;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFF;
+  font-size: 2.3em;
+}
+
+em {
+  color: #232027;
+} */
+
+/* .wrapper {
+  width: 40%;
+  margin: 40px auto;
+} */
+
+div.gallery {
+  margin-top: 30px;
+}
+
+div.gallery ul {
+  list-style-type: none;
+ margin-right: 50px;
+}
+
+/* animation */
+div.gallery ul li, div.gallery li img {
+  -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+div.gallery ul li {
+  position: relative;
+  float: left;
+  width: 130px;
+  height: 130px;
+  margin: 5px;
+  padding: 5px;
+  z-index: 0;
+}
+
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+div.gallery ul li:hover {
+  z-index: 5;
+}
+
+/* Image is position nicely under li */
+div.gallery ul li img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 25px;
+  padding: 5px;
+  width: 130px;
+  height: 130px;
+  
+}
+
+div.gallery ul li img:hover {
+  width: 200px;
+  height: 200px;
+  margin-top: -130px;
+  margin-left: -130px;
+  top: 65%;
+  left: 65%;
+}
+
+/* text overlay for images in sidebar */
+.text-block {
+ position: relative;
+ margin-top: 100px;
+ padding: -1;
+ border-radius: 25px;
+ text-align: center;
+ background-color: #5b385f;
+ font-family: Arial, Helvetica, sans-serif;
+ color: rgb(233, 224, 224);
+}
+
+/* Scrollbar settings */
+/* width */
+::-webkit-scrollbar {
+ width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+ background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: #555; 
+}

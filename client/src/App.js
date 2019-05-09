@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import { ImplicitCallback } from '@okta/okta-react';
-import { CssBaseline, withStyles } from '@material-ui/core';
+import { MuiThemeProvider, withStyles } from '@material-ui/core';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,9 +11,12 @@ import Home from './pages/Home';
 import AppHeader from './components/AppHeader';
 import Jumbotron from './components/Jumbotron';
 import AppStash from './components/Stash';
-import ItemModalWrapped from './components/Modal';
+
 
 import API from './utils/API'
+import { get } from 'https';
+import theme from './components/Theme';
+import './components/style.css'
 
 
 const styles = theme => ({
@@ -55,6 +58,8 @@ class App extends Component {
     // get the item from this.state.itemsIDoNotHave
     // push it into itemsIDoHave
     // call this.setState({itemsIDoHave})
+    get(this.state.itemsIDoHave)
+
 
     // API.getItemsIDoNotHave()
     //   .then((response) => {
@@ -71,9 +76,9 @@ class App extends Component {
     const { itemsIDoHave } = this.state;
 
     return (
-      <Fragment>
-        <CssBaseline />
-        <AppHeader itemsIDoNotHave={itemsIDoNotHave} onItemSelect={this.onItemSelect} />
+      <div className="image">
+      <MuiThemeProvider theme={theme}>
+      <AppHeader itemsIDoNotHave={itemsIDoNotHave} onItemSelect={this.onItemSelect} />
 
         <main className={classes.main}>
           <Route exact path="/" render={(props) => {
@@ -87,10 +92,13 @@ class App extends Component {
         <Jumbotron></Jumbotron>
         <AppStash itemsIDoHave={itemsIDoHave}></AppStash>
         {/* <ItemModalWrapped></ItemModalWrapped> */}
-      </Fragment>
+        </MuiThemeProvider>
+        </div>
     )
   }
 }
+
+        
 
 library.add(faStroopwafel);
 export default withStyles(styles)(App);
