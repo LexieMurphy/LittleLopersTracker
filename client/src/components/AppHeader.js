@@ -8,12 +8,7 @@ import {
 } from '@material-ui/core';
 import AppSidebar from "./AppSidebar";
 import LoginButton from './LoginButton';
-import Box from '@material-ui/core/Box';
-import Icon from '@material-ui/core/Icon';
 
-
-
-const styles = {
 
 };
 

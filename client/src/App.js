@@ -62,14 +62,7 @@ class App extends Component {
             <Route exact path="/" render={(props) => {
               return <Home {...props} itemsIDoHave={this.state.itemsIDoHave} />
             }}
-            />
-            {/* <SecureRoute exat path="/posts" component={PostsManager} /> */}
-            <Route path="/implicit/callback" component={ImplicitCallback} />
-          </main>
-          <Jumbotron></Jumbotron>
-          <ItemModalWrapped></ItemModalWrapped>
-      </MuiThemeProvider>
-      </div>
+
     )
   }
 }
