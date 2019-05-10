@@ -51,14 +51,33 @@ class App extends Component {
       })
   }
 
-  onItemSelect = (itemId) => {
-    console.log(itemId);
+  onItemSelect = (itemId, doHave) => {
+    console.log(itemId, doHave);
 
-    const itemsIDoHave = { ...this.state.itemsIDoHave }
-    // get the item from this.state.itemsIDoNotHave
-    // push it into itemsIDoHave
-    // call this.setState({itemsIDoHave})
-    get(this.state.itemsIDoHave)
+    // TODO: Make this not always true
+    API.updateItemStatus(itemId, doHave)
+    .then((response) => {
+      console.log(response);
+      console.log('Saved to stash success');
+      const item = this.state.itemsIDoNotHave.find(i => {
+        return i.id===itemId;
+      });
+      this.state.itemsIDoHave.push(item);
+      this.setState.itemsIDoNotHave = this.state.itemsIDoNotHave.filter(i => {
+        return i.id!==itemId;
+      });
+        this.setState.itemsIDoHave = this.state.itemsIDoHave;
+        console.log(this.state);
+    }).catch((err) => {
+      console.log('Error saving to stash');
+      console.log(err);
+    });
+
+    // const itemsIDoHave = { ...this.state.itemsIDoHave }
+    // // get the item from this.state.itemsIDoNotHave
+    // // push it into itemsIDoHave
+    // // call this.setState({itemsIDoHave})
+    // get(this.state.itemsIDoHave)
 
 
     // API.getItemsIDoNotHave()

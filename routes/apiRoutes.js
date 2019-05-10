@@ -13,7 +13,7 @@ module.exports = function (app) {
                 myStash: req.params.myStash === 'true'
             }
         };
-        console.log(db.loperItems);
+        // console.log(db.loperItems);
         db.loperItems.findAll(whereCondition)
             .then(function (db) {
                 res.json(db);
@@ -27,7 +27,7 @@ module.exports = function (app) {
                 id: req.params.id,
             }
         };
-        db.loperItems.update({ TODO: 'FILL OUT WHAT TO UPDATE ' }, whereCondition)
+        db.loperItems.update({ myStash: true }, whereCondition)
             .then(function (db) {
                 res.json(db);
             });
