@@ -31,7 +31,7 @@ class AppSidebar extends React.Component {
                 <div class="wrapper">
                   <div class="gallery">
                     <ul>
-                      <li key={`${itm.bowName}_${itm.id}`} onClick={() => { this.props.onItemSelect(itm.id) }}>
+                      <li key={`${itm.bowName}_${itm.id}`} onClick={() => { this.props.onItemSelect(itm.id, true) }}>
                         <img src={`${IMAGE_BASE_URL}${itm.image_name}`} alt={itm.bowName} />
                         <h5 className="text-block">{itm.bowName}</h5>
                       </li>
