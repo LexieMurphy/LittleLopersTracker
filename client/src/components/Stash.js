@@ -13,27 +13,25 @@ const styles = (placement) => ({
 
 // const App = (props) => {
 class AppStash extends React.Component {
-  
+
 
   render() {
     return (
-<div>
-        <ul>
-          {
-            this.props.itemsIDoHave.map((itm, idx) => {
-              return (
-                <li key={`${itm.bowName}_${itm.id}`} onClick={() => { this.props.onItemSelect(itm.id) }}>
-                  <div>
+      <div className="wrapper-stash">
+        <div className="gallery">
+          <ul>
+            {
+              this.props.itemsIDoHave.map((itm, idx) => {
+                return (
+                  <li key={`${itm.bowName}_${itm.id}`} onClick={() => { this.props.onItemSelect(itm.id) }}>
                     <img style={{ width: '128px' }} src={`${IMAGE_BASE_URL}${itm.image_name}`} alt={itm.bowName} />
-                    <div>
-                      {itm.bowName}
-                    </div>
-                  </div>
-                </li>
-              )
-            })
-          }
-        </ul>
+                    <h5 className="text-block">{itm.bowName}</h5>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
       </div>
     );
   }

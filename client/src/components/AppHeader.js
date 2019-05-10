@@ -27,7 +27,7 @@ class AppHeader extends React.Component {
     const { itemsIDoNotHave } = this.props;
 
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%' }} className="header">
         <AppBar position="static" style={{ paddingBottom: 0, marginBottom: 0 }}>
           <AppSidebar
             sidebarOpen={this.state.sidebarOpen}
@@ -35,20 +35,13 @@ class AppHeader extends React.Component {
             itemsIDoNotHave={itemsIDoNotHave}
             onItemSelect={this.props.onItemSelect}
           />
-          <div component="span" p={1}>
-            <Toolbar>
-              <div p={1} flexGrow={1}>
-
-                <Button color="inherit" onClick={() => this.onSetSidebarOpen(true)}><Icon>add_icon</Icon>View the Item I Still Need!</Button>
-              </div>
-              <div flexGrow={1.40} p={0}>
-                <Typography className="header" variant="title" color="inherit">
-                  Little Lopers Tracker
-          </Typography>
-              </div>
-              <div p={2}>
-                <LoginButton />
-              </div>
+          <div >
+            <Toolbar className="headerBody">
+              <Button color="inherit" onClick={() => this.onSetSidebarOpen(true)}><Icon>add_icon</Icon>View the Item I Still Need!</Button>
+              <Typography className="header" variant="title" color="inherit">
+                Little Lopers Tracker
+              </Typography>
+              <LoginButton />
             </Toolbar>
           </div>
         </AppBar>
